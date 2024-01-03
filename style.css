@@ -1,0 +1,39 @@
+body {
+    background-color: #1F1F1F;
+    color: white;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16pt;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+a, a:visited, a:active {
+    color: lightblue;
+}
+
+#open-mic h2 {
+    background-image: url("monitor-background.jpg");
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+}
+
+.event {
+    clear: both;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 1em;
+}
+
+.membership {
+    text-align: left;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+hr {
+    clear: both;
+}
