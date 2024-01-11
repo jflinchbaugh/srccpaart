@@ -53,3 +53,8 @@ section {
 .nav, .links {
   padding-top: 3ex;
 }
+
+img.room {
+  width: 20%;
+  float: right;
+}
