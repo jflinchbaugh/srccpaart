@@ -12,28 +12,36 @@ a, a:visited, a:active {
     color: lightblue;
 }
 
+section {
+  clear: both;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 1ex;
+  text-align: center;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.membership ul {
+  text-align: left;
+}
+
 #open-mic h2 {
-    background-image: url("monitor-background.jpg");
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border-radius: 1em;
+  background-image: url("monitor-background.jpg");
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 1em;
+  text-align: center;
 }
 
 .event {
-    clear: both;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 1em;
+  clear: both;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 1em;
 }
 
-.membership {
-    text-align: left;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-hr {
-    clear: both;
+.nav, .links {
+  padding-top: 3ex;
 }
