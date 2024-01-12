@@ -30,6 +30,10 @@ section {
   margin-left: auto;
 }
 
+iframe {
+  border-radius: 0.5em;
+}
+
 .membership ul {
   text-align: left;
 }
