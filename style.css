@@ -68,3 +68,7 @@ img.room {
 .clear {
   clear: both;
 }
+
+.guidelines {
+  text-align: left;
+}
