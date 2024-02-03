@@ -10,6 +10,8 @@ body {
   margin-left: auto;
   width: 90%;
   min-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 a, a:visited, a:active {
@@ -21,6 +23,7 @@ header {
   justify-content: space-between;
   align-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 header img {
@@ -40,6 +43,9 @@ header .right {
 }
 
 section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   clear: both;
   border-bottom: 3px dotted grey;
   padding-bottom: 1ex;
@@ -49,6 +55,13 @@ section {
 iframe {
   border-radius: 0.5em;
   width: 100%;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.membership {
+  display: inline;
 }
 
 .membership ul {
