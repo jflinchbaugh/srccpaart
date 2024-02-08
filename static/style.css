@@ -1,0 +1,103 @@
+body {
+  background-color: #1F1F1F;
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+a, a:visited, a:active {
+  color: lightblue;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header img {
+  width: 100%;
+}
+
+header .left {
+  text-align: left;
+  flex-basis: 35%;
+  padding: 0;
+}
+
+header .right {
+  text-align: right;
+  flex-basis: 60%;
+  padding: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  clear: both;
+  border-bottom: 3px dotted grey;
+  padding-bottom: 1ex;
+  text-align: center;
+}
+
+iframe {
+  border-radius: 0.5em;
+  width: 100%;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.membership {
+  display: inline;
+}
+
+.membership ul {
+  text-align: left;
+}
+
+#open-mic h2 {
+  background-image: url("monitor-background.jpg");
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 1em;
+  text-align: center;
+}
+
+.event {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 1em;
+}
+
+.nav, .links {
+  padding-top: 3ex;
+}
+
+img.room {
+  width: 25%;
+  float: right;
+  border-radius: 1em;
+  padding: 1ex;
+}
+
+.clear {
+  clear: both;
+}
+
+.guidelines {
+  text-align: left;
+}
