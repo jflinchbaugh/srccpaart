@@ -34,20 +34,22 @@
       <div id = "open-mic" class = "event">
         <h2>Open Mic Every Wednesday, 7:00pm</h2>
       </div>
-      {{- range $index, $element := .Site.Data.events }}
-      <div class = "event">
-        <a href = "{{- $element.link -}}" target = "_blank">
-          <img class = "event" src = "{{- $element.image -}}"
-            alt = "{{- $element.title -}}"></a>
-        <p>
-          {{ $element.title -}}, {{ $element.when }}
-          <br>
-          {{ $element.description }}
-          <br>
-          <a href = "{{- $element.link -}}" target = "_blank">
-            {{ $element.action_text }}</a>
-        </p>
-      </div>
+      {{- range $index, $element := $.Site.Data.events }}
+        {{ if lt time.Now ($element.expiration | time.AsTime) }}
+          <div class = "event">
+            <a href = "{{- $element.link -}}" target = "_blank">
+              <img class = "event" src = "{{- $element.image -}}"
+                alt = "{{- $element.title -}}"></a>
+            <p>
+              {{ $element.title -}}, {{ $element.when }}
+              <br>
+              {{ $element.description }}
+              <br>
+              <a href = "{{- $element.link -}}" target = "_blank">
+                {{ $element.actionText }}</a>
+            </p>
+          </div>
+        {{- end }}
       {{- end }}
     </section>
     <section class = "membership">
