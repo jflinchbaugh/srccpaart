@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <div class = "{{- .Params.page_class -}}">
+      {{ .Content }}
+    </div>
+    {{ partial "footer.html" . }}
+  </body>
+</html>
