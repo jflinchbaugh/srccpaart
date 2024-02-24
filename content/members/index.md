@@ -1,7 +1,7 @@
-+++
-title = 'Members'
-page_class = 'guidelines'
-+++
+---
+title: 'Members'
+page_class: 'guidelines'
+---
 
 ## Scheduling Guidelines for the Event Room and Stage
 

@@ -1,4 +1,4 @@
-+++
-title = 'All Past Events'
-layout = 'events'
-+++
+---
+title: 'Past Events'
+layout: 'events'
+---
