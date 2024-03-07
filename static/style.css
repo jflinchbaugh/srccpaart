@@ -24,6 +24,7 @@ header {
   align-content: space-between;
   align-items: center;
   width: 100%;
+  ont-size: 120%;
 }
 
 header img {
@@ -84,7 +85,7 @@ iframe {
   margin-bottom: 1em;
 }
 
-.nav, .links {
+.links {
   padding-top: 3ex;
 }
 
