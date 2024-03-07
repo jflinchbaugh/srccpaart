@@ -25,6 +25,7 @@ header {
   align-items: center;
   width: 100%;
   font-size: 1.2em;
+  max-height: 999999px;
 }
 
 header img {
