@@ -1,7 +1,5 @@
 <section class = "events">
-  <div id = "open-mic" class = "event">
-    <h2>Open Mic Every Wednesday, 7:00pm</h2>
-  </div>
+  {{ partial "open-mic.html" . }}
   {{- $events := $.Site.Data.events | sort |collections.Reverse -}}
   {{- range $index, $element := $events}}
     <div class = "event">
