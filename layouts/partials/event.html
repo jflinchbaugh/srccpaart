@@ -1,0 +1,18 @@
+<div class = "event">
+  <a href = "{{- .link -}}" target = "_blank">
+    <img class = "event" src = "{{- .image -}}"
+        alt = "{{- .title -}}"></a>
+  <div class = "what-when">
+    {{ .title | markdownify | emojify -}},
+    {{ .when | markdownify | emojify }}
+  </div>
+  {{ if .description }}
+    <div class = "description">
+      {{ .description | markdownify | emojify }}
+    </div>
+  {{ end }}
+  <div class = "action">
+    <a href = "{{- .link -}}" target = "_blank">
+      {{ .actionText | markdownify | emojify }}</a>
+  </div>
+</div>
