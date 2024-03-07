@@ -1,5 +1,5 @@
 <div class = "event">
-  <a href = "{{- .link -}}" target = "_blank">
+  <a href = "{{- or .link "." -}}" target = "_blank">
     <img class = "event" src = "{{- .image -}}"
         alt = "{{- .title -}}"></a>
   <div class = "what-when">
@@ -12,7 +12,7 @@
     </div>
   {{ end }}
   <div class = "action">
-    <a href = "{{- .link -}}" target = "_blank">
+    <a href = "{{- or .link "." -}}" target = "_blank">
       {{ .actionText | markdownify | emojify }}</a>
   </div>
 </div>
