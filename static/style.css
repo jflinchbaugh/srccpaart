@@ -87,7 +87,11 @@ iframe {
 }
 
 .links {
-  padding-top: 3ex;
+  padding-top: 2ex;
+}
+
+.links img {
+  width: 1.5em;
 }
 
 img.room {
