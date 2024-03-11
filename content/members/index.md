@@ -24,3 +24,6 @@ so we need to make availability fair to all.
   we __recommend_
   scheduling within 2 timeslots each evening:
   **5pm-8pm** and **8pm-11pm**.
+
+Contact TJ Carrozza for any special considerations
+or exceptions.
