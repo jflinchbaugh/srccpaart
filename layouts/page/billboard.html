@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+  </head>
+  <body>
+    <ul>
+    {{- range $index, $element := $.Site.Data.billboard }}
+      {{ if lt time.Now ((or $element.expiration "2050-01-01") | time.AsTime) }}
+        <li><a href = "{{ $element.href }}">{{ $element.href }}</a></li>
+      {{- end }}
+    {{- end }}
+    </ul>
+  </body>
+</html>
