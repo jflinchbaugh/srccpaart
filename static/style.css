@@ -22,7 +22,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  align-items: top;
+  align-items: start;
   width: 100%;
   font-size: 1.2em;
   max-height: 999999px;
