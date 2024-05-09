@@ -44,6 +44,12 @@ header .right {
   padding: 0;
 }
 
+header h1 {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 section {
   display: flex;
   flex-direction: column;
