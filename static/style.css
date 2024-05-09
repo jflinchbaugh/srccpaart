@@ -22,10 +22,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  align-items: center;
+  align-items: top;
   width: 100%;
   font-size: 1.2em;
   max-height: 999999px;
+  margin-top: 0.5ex;
 }
 
 header img {
@@ -34,7 +35,7 @@ header img {
 
 header .left {
   text-align: left;
-  flex-basis: 30%;
+  flex-basis: 25%;
   padding: 0;
 }
 
@@ -48,6 +49,8 @@ header h1 {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
+  margin: 0;
+  margin-bottom: 1ex;
 }
 
 .address {
