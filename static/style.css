@@ -50,6 +50,10 @@ header h1 {
   font-style: normal;
 }
 
+.address {
+  padding-top: 1ex;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -91,6 +95,11 @@ iframe {
   border-radius: 1em;
   margin-bottom: 1em;
 }
+
+.past-events {
+  padding-top: 1ex;
+}
+
 
 .links {
   padding-top: 2ex;
