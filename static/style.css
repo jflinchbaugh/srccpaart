@@ -14,8 +14,14 @@ body {
   flex-direction: column;
 }
 
+h1 a, h1 a:visited, h1 a:active {
+  color: white;
+  text-decoration: none;
+}
+
 a, a:visited, a:active {
   color: lightblue;
+  text-decoration: none;
 }
 
 header {
@@ -24,7 +30,6 @@ header {
   align-content: space-between;
   align-items: start;
   width: 100%;
-  font-size: 1.2em;
   max-height: 999999px;
   margin-top: 0.5ex;
   margin-bottom: 1ex;
@@ -34,28 +39,37 @@ header img {
   width: 100%;
 }
 
-header .left {
+header .subtitle {
   text-align: left;
-  flex-basis: 20%;
+  flex-basis: 44%;
+  padding: 0;
+  font-style: italic;
+}
+
+header .logo {
+  text-align: center;
+  flex-basis: 5%;
   padding: 0;
 }
 
-header .right {
+header .mission {
   text-align: right;
-  flex-basis: 65%;
+  flex-basis: 44%;
   padding: 0;
+  font-style: italic;
 }
 
-header h1 {
+h1 {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
+  font-size: 4vw;
   margin: 0;
   margin-bottom: 1ex;
 }
 
 .address {
-  padding-top: 1ex;
+  padding: 1ex;
 }
 
 section {
@@ -66,14 +80,6 @@ section {
   border-bottom: 3px dotted grey;
   padding-bottom: 1ex;
   text-align: center;
-}
-
-iframe {
-  border-radius: 0.5em;
-  width: 100%;
-  max-width: 500px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .membership {
@@ -89,7 +95,8 @@ iframe {
   margin-right: auto;
   margin-left: auto;
   border-radius: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 
 .past-events {
@@ -97,12 +104,16 @@ iframe {
 }
 
 .links {
-  padding-top: 2ex;
+  border-radius: 1em;
+  background: black;
+  width: 100%;
 }
 
 .links img {
-  width: 2em;
+  width: 1.5em;
+  margin: 0.25em;
   margin-left: 1em;
+  margin-right: 1em;
 }
 
 img.room {
@@ -120,12 +131,13 @@ img.room {
   text-align: left;
 }
 
-.mission {
-  font-size: 0.7em;
-  font-style: italic;
-}
-
-.subtitle {
-  font-size: 0.8em;
-  font-style: italic;
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 5vw;
+  }
+  header .logo {
+    text-align: center;
+    flex-basis: 10%;
+    padding: 0;
+  }
 }
