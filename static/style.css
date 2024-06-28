@@ -46,7 +46,7 @@ header .mid img {
 
 header .mid .subtitle {
   text-align: left;
-  flex-basis: 46%;
+  flex-basis: 45%;
   padding: 0;
   font-style: italic;
 }
@@ -54,12 +54,13 @@ header .mid .subtitle {
 header .mid .logo {
   text-align: center;
   flex-basis: 5%;
+  min-width: 100px;
   padding: 0;
 }
 
 header .mid .mission {
   text-align: right;
-  flex-basis: 46%;
+  flex-basis: 45%;
   padding: 0;
   font-style: italic;
 }
@@ -141,14 +142,5 @@ img.room {
 @media screen and (max-width: 1024px) {
   h1 {
     font-size: 5vw;
-  }
-  header .mid .subtitle {
-    flex-basis: 44%;
-  }
-  header .mid .logo {
-    flex-basis: 10%;
-  }
-  header .mid .mission{
-    flex-basis: 44%;
   }
 }
