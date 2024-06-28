@@ -25,6 +25,11 @@ a, a:visited, a:active {
 }
 
 header {
+  width: 100%;
+  border-bottom: 3px dotted grey;
+}
+
+header .mid {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
@@ -35,26 +40,26 @@ header {
   margin-bottom: 1ex;
 }
 
-header img {
+header .mid img {
   width: 100%;
 }
 
-header .subtitle {
+header .mid .subtitle {
   text-align: left;
-  flex-basis: 44%;
+  flex-basis: 46%;
   padding: 0;
   font-style: italic;
 }
 
-header .logo {
+header .mid .logo {
   text-align: center;
   flex-basis: 5%;
   padding: 0;
 }
 
-header .mission {
+header .mid .mission {
   text-align: right;
-  flex-basis: 44%;
+  flex-basis: 46%;
   padding: 0;
   font-style: italic;
 }
@@ -137,9 +142,13 @@ img.room {
   h1 {
     font-size: 5vw;
   }
-  header .logo {
-    text-align: center;
+  header .mid .subtitle {
+    flex-basis: 44%;
+  }
+  header .mid .logo {
     flex-basis: 10%;
-    padding: 0;
+  }
+  header .mid .mission{
+    flex-basis: 44%;
   }
 }
