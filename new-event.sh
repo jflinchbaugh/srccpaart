@@ -29,12 +29,12 @@ cp "/tmp/$$.jpg" "static/billboard/${file_name}.jpg"
 cp "/tmp/$$.jpg" "static/events/${file_name}.jpg"
 rm -f "/tmp/$$.jpg"
 
-cat > "data/billboard/${file_name}.json" <<EOF
+cat > "data/billboard/${file_name}.yaml" <<EOF
 href: ${file_name}.jpg
 expiration: ${expiration_date}
 EOF
 
-cat > "data/events/${file_name}.json" <<EOF
+cat > "data/events/${file_name}.yaml" <<EOF
 title: "${title}"
 when: "${when}"
 image: "/events/${file_name}.jpg"
