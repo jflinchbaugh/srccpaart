@@ -1,7 +1,10 @@
 <section class = "events">
   {{ partial "open-mic.html" . }}
   {{- range $index, $element := $.Site.Data.events }}
-    {{ if lt time.Now ($element.expiration | time.AsTime) }}
+    {{ if
+         lt
+           (time.Now.Add (time.ParseDuration "-24h"))
+           ($element.date | time.AsTime) }}
       {{ partial "event.html" $element }}
     {{- end }}
   {{- end }}
