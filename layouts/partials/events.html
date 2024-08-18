@@ -1,10 +1,11 @@
 <section class = "events">
+  {{ partial "tj-go-fund-me.html" . }}
   {{ partial "open-mic.html" . }}
   {{- range $index, $element := $.Site.Data.events }}
-    {{ if
-         lt
-           (time.Now.Add (time.ParseDuration "-24h"))
-           ($element.date | time.AsTime) }}
+  {{ if
+  lt
+  (time.Now.Add (time.ParseDuration "-24h"))
+  ($element.date | time.AsTime) }}
       {{ partial "event.html" $element }}
     {{- end }}
   {{- end }}
