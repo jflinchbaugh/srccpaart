@@ -24,9 +24,13 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline overline;
+}
+
 header {
   width: 100%;
-  border-bottom: 3px dotted grey;
+  border-bottom: 3px dotted gray;
 }
 
 header .mid {
@@ -84,7 +88,7 @@ section {
   flex-direction: column;
   width: 100%;
   clear: both;
-  border-bottom: 3px dotted grey;
+  border-bottom: 3px dotted gray;
   padding-bottom: 1ex;
   text-align: center;
 }
