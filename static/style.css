@@ -147,4 +147,7 @@ img.room {
   h1 {
     font-size: 5vw;
   }
+  .links img {
+    width: 2.5em;
+  }
 }
