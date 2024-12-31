@@ -145,13 +145,10 @@ img.room {
 
 @media screen and (max-width: 1024px) {
   h1 {
-    font-size: 5vw;
+    font-size: 10vw;
   }
   .links img {
-    width: 2.5em;
-  }
-
-  header {
-    font-size: 150%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 }
