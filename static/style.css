@@ -50,21 +50,21 @@ header .mid img {
 
 header .mid .subtitle {
   text-align: left;
-  flex-basis: 45%;
+  flex-basis: 40%;
   padding: 0;
   font-style: italic;
 }
 
 header .mid .logo {
   text-align: center;
-  flex-basis: 5%;
+  flex-basis: 10%;
   min-width: 100px;
   padding: 0;
 }
 
 header .mid .mission {
   text-align: right;
-  flex-basis: 45%;
+  flex-basis: 40%;
   padding: 0;
   font-style: italic;
 }
@@ -149,5 +149,9 @@ img.room {
   }
   .links img {
     width: 2.5em;
+  }
+
+  header {
+    font-size: 150%;
   }
 }
