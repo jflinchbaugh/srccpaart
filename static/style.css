@@ -25,7 +25,7 @@ a, a:visited, a:active {
 }
 
 a:hover {
-  text-decoration: underline overline;
+  opacity: 0.6;
 }
 
 header {
@@ -52,6 +52,7 @@ header .mid .subtitle {
   text-align: left;
   flex-basis: 40%;
   padding: 0;
+  font-size: 90%;
   font-style: italic;
 }
 
@@ -66,6 +67,7 @@ header .mid .mission {
   text-align: right;
   flex-basis: 40%;
   padding: 0;
+  font-size: 90%;
   font-style: italic;
 }
 
