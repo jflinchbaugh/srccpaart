@@ -90,7 +90,9 @@ h1 {
 section {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
   clear: both;
   border-bottom: 3px dotted gray;
   padding-bottom: 1ex;
@@ -106,7 +108,7 @@ section {
 }
 
 div.event {
-  width: 90%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding: 0;
