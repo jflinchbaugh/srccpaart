@@ -114,6 +114,39 @@ div.event {
   margin-top: 0.5em;
 }
 
+#open-mic {
+  position: relative;
+  color: yellow;
+}
+
+#open-mic img {
+  width: 100%;
+  opacity: 0.6;
+}
+
+#open-mic p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.25em;
+}
+
+#open-mic .text {
+  position: absolute;
+  width: 100%;
+  top: 0.5em;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2vw;
+}
+
+#open-mic p.title {
+  font-weight: 700;
+  font-size: 120%;
+}
+
 img.event {
   width: 100%;
   padding: 0;
@@ -164,5 +197,8 @@ img.room {
   .links img {
     margin-left: 0.5em;
     margin-right: 0.5em;
+  }
+  #open-mic .text {
+    font-size: 4vw;
   }
 }
