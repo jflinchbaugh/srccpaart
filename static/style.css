@@ -26,6 +26,7 @@ a, a:visited, a:active {
 
 header {
   width: 90%;
+  max-width: 800px;
   margin-right: auto;
   margin-left: auto;
   border-bottom: 3px dotted gray;
@@ -87,6 +88,7 @@ section {
   display: flex;
   flex-direction: column;
   width: 90%;
+  max-width: 800px;
   margin-right: auto;
   margin-left: auto;
   clear: both;
