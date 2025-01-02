@@ -24,10 +24,6 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
-a:hover {
-  opacity: 0.8;
-}
-
 header {
   width: 90%;
   margin-right: auto;
