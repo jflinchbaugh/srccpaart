@@ -151,6 +151,10 @@ img.room {
 
 .guidelines {
   text-align: left;
+  width: 90%;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 1024px) {
