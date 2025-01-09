@@ -171,13 +171,16 @@ img.event {
 }
 
 div.rooms {
-  width: 20%;
-  float: right;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: start;
 }
 
 img.room {
-  display: block;
-  width: 100%;
+  height: 10vw;
   border-radius: 1em;
   padding: 1ex;
 }
@@ -188,6 +191,10 @@ img.room {
 
 .guidelines {
   text-align: left;
+}
+
+footer {
+  padding-top: 0.5em;
 }
 
 @media screen and (max-width: 1024px) {
@@ -201,8 +208,16 @@ img.room {
   #open-mic .text {
     font-size: 4.5vw;
   }
-}
 
-footer {
-  padding-top: 0.5em;
+  div.rooms {
+    width: 20%;
+    height: auto;
+    float: right;
+    flex-direction: column;
+  }
+
+  img.room {
+    width: 100%;
+    height: auto;
+  }
 }
