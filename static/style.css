@@ -180,7 +180,7 @@ div.rooms {
 }
 
 img.room {
-  height: 10vw;
+  height: 20vh;
   border-radius: 1em;
   padding: 1ex;
 }
@@ -209,15 +209,13 @@ footer {
     font-size: 4.5vw;
   }
 
-  div.rooms {
-    width: 20%;
-    height: auto;
-    float: right;
-    flex-direction: column;
-  }
-
   img.room {
-    width: 100%;
-    height: auto;
+    height: 15vh;
+  }
+}
+
+@media screen and (max-width:600px) {
+  img.room {
+    height: 10vh;
   }
 }
