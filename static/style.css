@@ -24,6 +24,13 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
+a.button {
+  border: dotted lightblue;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+}
+
 header {
   width: 90%;
   max-width: 800px;
