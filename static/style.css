@@ -37,6 +37,7 @@ header {
   margin-right: auto;
   margin-left: auto;
   border-bottom: 3px dotted gray;
+  padding-bottom: 1ex;
 }
 
 header .mid {
