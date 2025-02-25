@@ -16,6 +16,7 @@ lower_title=$(echo $title | tr '[A-Z] ' '[a-z]-' | sed 's/[^a-z0-9-]//g')
 file_name="${date}-${lower_title}"
 
 curl "$image_url" > "/tmp/$$.jpg" || exit 1
+file "/tmp/$$.jpg" | grep "JPEG image data" || exit 1
 cp "/tmp/$$.jpg" "static/billboard/${file_name}.jpg"
 cp "/tmp/$$.jpg" "static/events/${file_name}.jpg"
 rm -f "/tmp/$$.jpg"
