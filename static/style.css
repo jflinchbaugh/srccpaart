@@ -188,9 +188,9 @@ div.rooms {
 }
 
 img.room {
-  height: 20vh;
+  height: 25vh;
   border-radius: 1em;
-  padding: 1ex;
+  padding: 0ex;
 }
 
 .clear {
