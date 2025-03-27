@@ -92,6 +92,7 @@ section {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 1ex;
   clear: both;
   border-bottom: 3px dotted gray;
   padding-bottom: 1ex;
