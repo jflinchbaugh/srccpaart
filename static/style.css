@@ -40,6 +40,10 @@ header {
   padding-bottom: 1ex;
 }
 
+header .logo img {
+  width: 100%;
+}
+
 header .mid {
   display: flex;
   justify-content: space-between;
@@ -51,30 +55,19 @@ header .mid {
   margin-bottom: 1ex;
 }
 
-header .mid img {
-  width: 100%;
-}
-
 header .mid .subtitle {
   text-align: left;
-  flex-basis: 40%;
+  flex-basis: 50%;
   padding: 0;
-  font-size: 90%;
+  font-size: 80%;
   font-style: italic;
-}
-
-header .mid .logo {
-  text-align: center;
-  flex-basis: 10%;
-  min-width: 100px;
-  padding: 0;
 }
 
 header .mid .mission {
   text-align: right;
-  flex-basis: 40%;
+  flex-basis: 50%;
   padding: 0;
-  font-size: 90%;
+  font-size: 80%;
   font-style: italic;
 }
 

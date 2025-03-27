@@ -1,22 +1,19 @@
 <header>
   {{ partial "links.html" . }}
-  <h1>
+  <div class = "address">
+    <a href = "https://maps.app.goo.gl/WMb3ZFDi5LZJLCVc8" target = "_blank">
+      156B Lancaster Ave, Columbia, PA 17512</a>
+  </div>
+  <div class = "logo">
     <a href = "/">
-      {{ $.Site.Title -}}
-    {{- if $.Page.Params.title -}}
-    : {{ $.Page.Params.title }}
-    {{- end -}}
-    </a>
-  </h1>
+      <img src = "/srcc-logo.png"
+           alt = "SRCC: Susquehanna River Creative Conspiracy"></a>
+  </div>
   <div class = "mid">
     <div class = "subtitle">
       A nonprofit collective studio &amp; venue
       for music rehearsal, podcasting, art, photography, writing
       &amp; other creative endeavors.
-    </div>
-    <div class = "logo">
-      <a href = "/">
-          <img src = "/srcc.jpg" alt = "SRCC"></a>
     </div>
     <div class = "mission">
       Elevate community
@@ -26,10 +23,6 @@
       find inspiration and
       connection in the process.
     </div>
-  </div>
-  <div class = "address">
-    <a href = "https://maps.app.goo.gl/WMb3ZFDi5LZJLCVc8" target = "_blank">
-      156B Lancaster Ave, Columbia, PA 17512</a>
   </div>
   <div class = "nav">
     <a href = "/#membership" class = "button">Memberships Available!</a>
