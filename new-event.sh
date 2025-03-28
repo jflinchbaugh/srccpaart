@@ -1,10 +1,11 @@
 #!/bin/sh
 
 if [ "$#" -lt 6 ]; then
-    echo "Usage: $0 '<image_url>' '<event_url>' '<date>' '<title>' '<when>' '<description>'"
+    echo "Usage: $0 [art|music] '<image_url>' '<event_url>' '<date>' '<title>' '<when>' '<description>'"
     exit 1
 fi
 
+type=$1; shift
 image_url=$1; shift
 event_url=$1; shift
 date=$1; shift
@@ -26,7 +27,7 @@ href: ${file_name}.jpg
 date: ${date}
 EOF
 
-cat > "data/events/${file_name}.yaml" <<EOF
+cat > "data/events/${type}/${file_name}.yaml" <<EOF
 title: "${title}"
 when: "${when}"
 image: "/events/${file_name}.jpg"
