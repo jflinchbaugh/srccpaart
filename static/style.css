@@ -45,6 +45,7 @@ header .logo {
   border-radius: 1em;
   padding: 0.5em;
 }
+
 header .logo img {
   width: 60%;
 }
@@ -77,12 +78,12 @@ header .mid .mission {
 }
 
 h1 {
-  font-family: "Special Elite", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 4vw;
   margin: 0;
   margin-bottom: 1ex;
+}
+
+h2 {
+  margin: 0;
 }
 
 .address {
