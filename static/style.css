@@ -43,6 +43,7 @@ header {
 header .logo {
   background-color: #080808;
   border-radius: 1em;
+  padding: 0.5em;
 }
 header .logo img {
   width: 60%;
