@@ -209,6 +209,18 @@ img.room {
   padding-bottom: 1ex;
 }
 
+.paypal {
+  text-align: left;
+}
+
+.paypal img {
+  float: right;
+  width: 40%;
+  min-width: 200px;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+
 footer {
   padding-top: 0.5em;
 }
