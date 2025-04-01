@@ -1,0 +1,19 @@
+<div class = "payment">
+  <h2>{{ $.Page.Params.title }}</h2>
+  <p>(plus fees)</p>
+  <p>
+    <a href = "{{- $.Page.Params.one_time -}}"
+       target = "_blank" class = "button">
+      Pay {{ $.Page.Params.amount }} Once</a>
+  </p>
+  <p>
+    <a href = "{{- $.Page.Params.subscription -}}"
+       target = "_blank" class = "button">
+      Subscribe for {{ $.Page.Params.amount }} Each Month</a>
+  </p>
+  <p>
+    Read more about our
+    <a href = "/paypal/" target = "_blank">
+      PayPal Subscriptions</a>.
+  </p>
+</div>
