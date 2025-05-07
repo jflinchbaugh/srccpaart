@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 if [ "$#" -lt 6 ]; then
     echo "Usage: $0 [art|music] '<event_url>' '<date>' '<title>' '<when>' '<description>'"
@@ -12,12 +12,15 @@ title=$1; shift
 when=$1; shift
 description=$1; shift
 
-image_url="${event_url}/media/?size=l"
+image_url="${event_url}media/?size=l"
 lower_title=$(echo $title | tr '[A-Z] ' '[a-z]-' | sed 's/[^a-z0-9-]//g')
 file_name="${date}-${lower_title}"
 
-curl "$image_url" > "/tmp/$$.jpg" || exit 1
-file "/tmp/$$.jpg" | grep "JPEG image data" || exit 1
+curl \
+    -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:138.0) Gecko/20100101 Firefox/138.0
+" \
+    -v "$image_url" > "/tmp/$$.jpg" || exit 1
+file "/tmp/$$.jpg" #| grep "JPEG image data" || exit 1
 cp "/tmp/$$.jpg" "static/billboard/${file_name}.jpg"
 cp "/tmp/$$.jpg" "static/events/${file_name}.jpg"
 rm -f "/tmp/$$.jpg"
