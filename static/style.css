@@ -65,6 +65,7 @@ header .mid .subtitle {
   text-align: left;
   flex-basis: 50%;
   padding: 0;
+  padding-right: 0.5ex;
   font-size: 80%;
   font-style: italic;
 }
@@ -73,6 +74,7 @@ header .mid .mission {
   text-align: right;
   flex-basis: 50%;
   padding: 0;
+  padding-left: 0.5ex;
   font-size: 80%;
   font-style: italic;
 }
