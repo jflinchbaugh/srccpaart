@@ -14,7 +14,7 @@
     </div>
     <div id = "searching">Searching...</div>
     <script>
-     const baseUrl = "http://192.168.0."
+     const baseUrl = "http://192.168.0"
      function reqListener(ev) {
 
          const url = ev.srcElement.responseURL;
@@ -32,7 +32,7 @@
      for (i = 1; i < 256; i++) {
          const req = new XMLHttpRequest();
          req.addEventListener("load", reqListener);
-         req.open("GET", baseUrl + i + ":8080/app-identity");
+         req.open("GET", `${baseUrl}.${i}:8080/app-identity`);
          req.send();
       }
      setTimeout(function() {
