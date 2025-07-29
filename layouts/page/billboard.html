@@ -7,7 +7,7 @@
     {{- range $index, $element := $.Site.Data.billboard }}
       {{ if
          lt
-         (time.Now.Add (time.ParseDuration "-168h"))
+         (time.Now.Add (time.ParseDuration "-120h"))
          ((or $element.date "2050-01-01") | time.AsTime) }}
         <li><a href = "{{ $element.href }}">{{ $element.href }}</a></li>
       {{- end }}
