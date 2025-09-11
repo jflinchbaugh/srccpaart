@@ -31,7 +31,8 @@
     {{ partial "event.html" $element -}}
   {{- end -}}
   {{- end -}}
+  {{ partial "venue-pilot.html" . }}
   <div class = "past-events">
-    <a href = "/events/" class = "button">Past Events</a>
+    <a href = "{{- absURL "events/" -}}" class = "button">Past Events</a>
   </div>
 </section>

@@ -1,7 +1,8 @@
 <div class = "event">
   <a href = "{{- or .link "." -}}" target = "_blank">
-    <img class = "event" src = "{{- .image -}}"
-        alt = "{{- .title -}}"></a>
+    <img class = "event"
+         src = "{{- absURL .image -}}"
+         alt = "{{- .title -}}"></a>
   <div class = "what-when">
     {{ .title | markdownify | emojify -}},
     {{ .when | markdownify | emojify }}
