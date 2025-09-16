@@ -1,35 +1,5 @@
 <section class = "events">
   {{ partial "open-mic.html" . -}}
-  {{- $art_events := slice -}}
-  {{- range $index, $element := $.Site.Data.events.art -}}
-    {{- if
-        (lt
-          (time.Now.Add (time.ParseDuration "-24h"))
-          ($element.date | time.AsTime)) -}}
-  {{- $art_events = $art_events | append $element -}}
-  {{- end -}}
-  {{- end -}}
-  {{- if $art_events -}}
-  <h2 id = "art">Art Events</h2>
-  {{- range $element := $art_events -}}
-  {{- partial "event.html" $element -}}
-  {{- end -}}
-  {{- end -}}
-
-  {{- $music_events := slice -}}
-  {{- range $index, $element := $.Site.Data.events.music -}}
-  {{- if
-  (lt
-  (time.Now.Add (time.ParseDuration "-24h"))
-  ($element.date | time.AsTime)) -}}
-  {{- $music_events = $music_events | append $element -}}
-  {{- end -}}
-  {{- end -}}
-  {{- if $music_events -}}
-  <h2 id = "music">Music Events</h2>
-  {{- range $element := $music_events -}}
-    {{ partial "event.html" $element -}}
-  {{- end -}}
-  {{- end -}}
+  <h2>Events</h2>
   {{ partial "venue-pilot.html" . }}
 </section>
