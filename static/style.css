@@ -20,12 +20,12 @@ h1 a, h1 a:visited, h1 a:active {
 }
 
 a, a:visited, a:active {
-  color: lightblue;
+  color: #2d6f65;
   text-decoration: none;
 }
 
 a.button {
-  border: dotted lightblue;
+  border: dotted #2d6f65;
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 1em;
