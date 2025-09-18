@@ -30,3 +30,4 @@ curl 'https://www.venuepilot.co/graphql' \
 
 git add .
 git commit -m 'automatic event images'
+git push
