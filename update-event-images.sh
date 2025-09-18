@@ -27,3 +27,6 @@ curl 'https://www.venuepilot.co/graphql' \
 | jq '.data.paginatedEvents.collection[].announceImages[].versions.cover.src' \
 | grep "cover_" \
 | xargs curl --remote-name-all
+
+git add .
+git commit -m 'automatic event images'
