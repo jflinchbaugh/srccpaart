@@ -41,9 +41,9 @@ header {
 }
 
 header .logo {
-  background-color: #080808;
+  background-color: #2d6f65;
   border-radius: 1em;
-  padding: 0.5em;
+  padding: 0.25em;
 }
 
 header .logo img {
