@@ -37,7 +37,7 @@ header {
   margin-right: auto;
   margin-left: auto;
   border-bottom: 3px dotted gray;
-  padding-bottom: 1ex;
+  padding-bottom: 0.25ex;
 }
 
 header .logo {
@@ -112,37 +112,6 @@ div.event {
   padding: 0;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-}
-
-#open-mic {
-  position: relative;
-  color: yellow;
-}
-
-#open-mic img {
-  width: 100%;
-}
-
-#open-mic p {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 0.25em;
-}
-
-#open-mic .text {
-  position: absolute;
-  width: 100%;
-  top: 0.5em;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  font-family: "Special Elite", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2vw;
-}
-
-#open-mic p.title {
-  font-size: 150%;
 }
 
 img.event {
