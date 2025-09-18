@@ -23,10 +23,11 @@ curl 'https://www.venuepilot.co/graphql' \
   -H 'Sec-Fetch-Mode: cors' \
   -H 'Sec-Fetch-Site: cross-site' \
   -H 'Priority: u=4' \
+  -s \
   --data-raw "$QUERY" \
 | jq '.data.paginatedEvents.collection[].announceImages[].versions.cover.src' \
 | grep "cover_" \
-| xargs curl --remote-name-all
+| xargs curl -s --remote-name-all
 
 git pull
 git add .
