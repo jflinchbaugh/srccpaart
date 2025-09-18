@@ -28,6 +28,7 @@ curl 'https://www.venuepilot.co/graphql' \
 | grep "cover_" \
 | xargs curl --remote-name-all
 
+git pull
 git add .
 git commit -m 'automatic event images'
 git push
