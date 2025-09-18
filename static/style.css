@@ -48,11 +48,14 @@ header .logo {
 
 header .logo img {
   width: 60%;
-  margin-top: 0.5em;
   margin-bottom: 0;
 }
 
-header .subtitle {
+header .subtitle-1 {
+  font-size: 1.3em;
+}
+
+header .subtitle-2 {
   font-size: 80%;
 }
 
