@@ -1,28 +1,19 @@
 <header>
   {{ partial "links.html" . }}
   {{ partial "header-lite.html" . }}
-  <div class = "mid">
-    <div class = "subtitle">
-      A nonprofit collective studio &amp; venue
-      for music rehearsal, podcasting, art, photography, writing
-      &amp; other creative endeavors.
-    </div>
-    <div class = "mission">
-      Elevate community
-      by facilitating
-      creative endeavors and
-      welcoming all to
-      find inspiration and
-      connection in the process.
-    </div>
-  </div>
-  <div class = "nav">
-    <a href = "{{ absURL "#membership" -}}"
-       class = "button">Memberships Available!</a>
+  <div class = "mission">
+    Elevate community
+    by facilitating
+    creative endeavors and
+    welcoming all to
+    find inspiration and
+    connection in the process.
   </div>
   <div class = "nav">
     <a href = "https://www.paypal.com/ncp/payment/QS9JDJZL98KAY"
        target = "_blank"
        class = "button">Donate!</a>
+    <a href = "{{ absURL "#membership" -}}"
+       class = "button">Memberships Available!</a>
   </div>
 </header>
