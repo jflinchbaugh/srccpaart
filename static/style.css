@@ -49,6 +49,7 @@ header .logo {
 header .logo img {
   width: 60%;
   margin-top: 0.5em;
+  margin-bottom: 0;
 }
 
 header .subtitle {
@@ -56,7 +57,6 @@ header .subtitle {
 }
 
 header .mission {
-  margin: 0.25em;
   font-size: 80%;
 }
 
@@ -189,7 +189,8 @@ img.room {
 }
 
 .nav {
-  padding-bottom: 1ex;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .paypal {
