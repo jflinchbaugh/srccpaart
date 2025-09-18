@@ -220,7 +220,8 @@ footer {
     margin-left: 0.25em;
     margin-right: 0.25em;
   }
-  #open-mic .text {
-    font-size: 4.5vw;
+
+  header .subtitle-1 {
+    font-size: 1.1em;
   }
 }
