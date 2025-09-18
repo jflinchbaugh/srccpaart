@@ -219,14 +219,4 @@ footer {
   #open-mic .text {
     font-size: 4.5vw;
   }
-
-  img.room {
-    height: 20vh;
-  }
-}
-
-@media screen and (max-width:600px) {
-  img.room {
-    height: 15vh;
-  }
 }
