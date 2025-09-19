@@ -44,6 +44,7 @@ header .logo {
   background-color: #2d6f65;
   border-radius: 1em;
   padding: 0.25em;
+  font-family: 'Oswald', sans-serif;
 }
 
 header .logo img {
@@ -52,16 +53,16 @@ header .logo img {
 }
 
 header .subtitle-1 {
-  font-size: 1.3em;
+  font-size: 1.6em;
 }
 
 header .subtitle-2 {
-  font-size: 80%;
+  font-size: 1.2em;
 }
 
 header .mission {
   margin-top: 0.5em;
-  font-size: 80%;
+  font-size: 1.0em;
 }
 
 h1 {
