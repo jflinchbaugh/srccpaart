@@ -1,7 +1,6 @@
 ---
 title: 'PayPal'
 page_class: 'paypal'
-type: 'page'
 ---
 
 ## Easy Payment with PayPal
