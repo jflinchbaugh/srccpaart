@@ -27,7 +27,7 @@ curl 'https://www.venuepilot.co/graphql' \
   --data-raw "$QUERY" \
 | jq '.data.paginatedEvents.collection[].announceImages[].versions.cover.src' \
 | grep "cover_" \
-| xargs curl -s --remote-name-all
+| xargs -r curl -s --remote-name-all
 
 git pull
 git add .
