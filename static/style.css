@@ -29,6 +29,12 @@ a.button {
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 1em;
+  line-height: 2em;
+}
+
+a.donate {
+  background-color: #2d6f65;
+  font-size: 1.5em;
 }
 
 header {
