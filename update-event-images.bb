@@ -183,14 +183,17 @@ fragment AnnounceImages on PublicEvent {
       data (json/parse-string body true)
       events (get-in data [:data :paginatedEvents :collection])]
 
+  ;; write yaml files for past events
   (->>
     events
     (map parse-event)
     (map write-event)
     (doall))
 
+  ;; remove old events from billboard images
   (proc/shell {:dir "static/billboard"} "sh" "-c" "rm -f cover_*")
 
+  ;; download the images for the billboard
   (->>
     events
     (filter (fn [e] (<= 0 (compare (:date e) (str (LocalDate/now))))))
@@ -198,6 +201,7 @@ fragment AnnounceImages on PublicEvent {
     (filter (partial re-matches #".*/cover_.*.jpg"))
     (download-images dir)))
 
+;; commit the changes to build site
 (proc/shell "sh" "-c"
   "git pull
    git add .
