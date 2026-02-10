@@ -9,13 +9,13 @@
   <div class = "when">
     {{ .when | markdownify | emojify }}
   </div>
-  {{ if .description }}
-    <div class = "description">
-      {{ .description | transform.HTMLToMarkdown | markdownify | emojify }}
-    </div>
-  {{ end }}
   <div class = "action">
-    <a href = "{{- or .link "." -}}" target = "_blank">
+    <a class = "button" href = "{{- or .link "." -}}" target = "_blank">
       {{ .actionText | markdownify | emojify }}</a>
   </div>
+  {{ if .description }}
+  <div class = "description">
+    {{ .description | transform.HTMLToMarkdown | markdownify | emojify }}
+  </div>
+  {{ end }}
 </div>
