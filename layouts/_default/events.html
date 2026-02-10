@@ -4,7 +4,9 @@
     {{ partial "head.html" . }}
   </head>
   <body>
-    {{ partial "header.html" . }}
+    <header>
+      {{ partial "header-lite.html" . }}
+    </header>
     {{ partial "all-events.html" . }}
     {{ partial "footer.html" . }}
   </body>

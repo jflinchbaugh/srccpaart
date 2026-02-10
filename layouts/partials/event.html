@@ -3,13 +3,15 @@
     <img class = "event"
          src = "{{- absURL .image -}}"
          alt = "{{- .title -}}"></a>
-  <div class = "what-when">
-    {{ .title | markdownify | emojify -}},
+  <div class = "title">
+    {{ .title | markdownify | emojify -}}
+  </div>
+  <div class = "when">
     {{ .when | markdownify | emojify }}
   </div>
   {{ if .description }}
     <div class = "description">
-      {{ .description | markdownify | emojify }}
+      {{ .description | transform.HTMLToMarkdown | markdownify | emojify }}
     </div>
   {{ end }}
   <div class = "action">

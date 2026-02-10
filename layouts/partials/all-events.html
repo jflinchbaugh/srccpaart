@@ -1,6 +1,9 @@
 <section class = "events">
-  {{ partial "open-mic.html" . }}
-  {{- $events := (merge $.Site.Data.events.art $.Site.Data.events.music) | sort | collections.Reverse -}}
+  {{- $events := (merge
+                   $.Site.Data.events.art
+                   $.Site.Data.events.music
+                   $.Site.Data.events.venuepilot)
+                 | sort | collections.Reverse -}}
   {{- range $index, $element := $events}}
     {{ partial "event.html" $element }}
   {{- end }}
