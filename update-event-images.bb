@@ -118,7 +118,7 @@
    :date (:date event)
    :link (:ticketsUrl event)
    :actionText (:status event)
-   :image (get-image-url event)
+   :image (str/replace (get-image-url event) #".*/cover_" "events/cover_")
    :description (str
                   (when (seq? (:support event))
                     (str "<p>" (:support event) "</p>\n"))
@@ -154,7 +154,8 @@
 
 (let [
       start-date "2025-10-01" #_(str (LocalDate/now))
-      dir "static/billboard"
+      billboard-dir "static/billboard"
+      event-dir "static/events"
       query (json/generate-string
               {:operationName nil
                :variables {:accountIds [3338]
@@ -179,12 +180,19 @@
                "Sec-Fetch-Site" "cross-site"
                "Priority" "u=4"}
       response @(http/post
-         "https://www.venuepilot.co/graphql"
-         {:body query
-          :headers headers})
+                  "https://www.venuepilot.co/graphql"
+                  {:body query
+                   :headers headers})
       body (:body response)
       data (json/parse-string body true)
       events (get-in data [:data :paginatedEvents :collection])]
+
+  ;; download the images for events
+  (->>
+    events
+    (map get-image-url)
+    (filter (partial re-matches #".*/cover_.*.jpg"))
+    ( download-images event-dir))
 
   ;; write yaml files for past events
   (->>
@@ -194,7 +202,7 @@
     (doall))
 
   ;; remove old events from billboard images
-  (proc/shell {:dir "static/billboard"} "sh" "-c" "rm -f cover_*")
+  (proc/shell {:dir billboard-dir} "sh" "-c" "rm -f cover_*")
 
   ;; download the images for the billboard
   (->>
@@ -202,7 +210,7 @@
     (filter (fn [e] (<= 0 (compare (:date e) (str (LocalDate/now))))))
     (map get-image-url)
     (filter (partial re-matches #".*/cover_.*.jpg"))
-    (download-images dir)))
+    (download-images billboard-dir)))
 
 ;; commit the changes to build site
 #_(proc/shell "sh" "-c"
