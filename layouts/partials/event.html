@@ -13,9 +13,4 @@
     <a class = "button" href = "{{- or .link "." -}}" target = "_blank">
       {{ .actionText | markdownify | emojify }}</a>
   </div>
-  {{ if .description }}
-  <div class = "description">
-    {{ .description | transform.HTMLToMarkdown | markdownify | emojify }}
-  </div>
-  {{ end }}
 </div>
