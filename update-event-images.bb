@@ -12,82 +12,82 @@
     (java.time.format DateTimeFormatter)))
 
 (def query
-"query (
-  $accountIds: [Int!]!,
-  $startDate: String!,
-  $endDate: String,
-  $search: String,
-  $searchScope: String,
-  $limit: Int,
-  $page: Int
-) {
-  paginatedEvents(
-    arguments: {
-      accountIds: $accountIds,
-      startDate: $startDate,
-      endDate: $endDate,
-      search: $search,
-      searchScope: $searchScope,
-      limit: $limit,
-      page: $page
-     }
+  "query (
+    $accountIds: [Int!]!,
+    $startDate: String!,
+    $endDate: String,
+    $search: String,
+    $searchScope: String,
+    $limit: Int,
+    $page: Int
   ) {
-    collection {
-      id
-      name
-      date
-      doorTime
-      startTime
-      endTime
-      minimumAge
-      promoter
-      support
-      description
-      websiteUrl
-      twitterUrl
-      instagramUrl
-      ...AnnounceImages
-      status
-      announceArtists {
-        applemusic
-        bandcamp
-        facebook
-        instagram
-        lastfm
-        name
-        songkick
-        spotify
-        twitter
-        website
-        wikipedia
-        youtube
+    paginatedEvents(
+      arguments: {
+        accountIds: $accountIds,
+        startDate: $startDate,
+        endDate: $endDate,
+        search: $search,
+        searchScope: $searchScope,
+        limit: $limit,
+        page: $page
       }
-      artists {
-        bio
-        createdAt
+    ) {
+      collection {
         id
         name
-        updatedAt
+        date
+        doorTime
+        startTime
+        endTime
+        minimumAge
+        promoter
+        support
+        description
+        websiteUrl
+        twitterUrl
+        instagramUrl
+        ...AnnounceImages
+        status
+        announceArtists {
+          applemusic
+          bandcamp
+          facebook
+          instagram
+          lastfm
+          name
+          songkick
+          spotify
+          twitter
+          website
+          wikipedia
+          youtube
+        }
+        artists {
+          bio
+          createdAt
+          id
+          name
+          updatedAt
+        }
+        venue {
+          name
+        }
+        footerContent
+        ticketsUrl
       }
-      venue {
-        name
-      }
-      footerContent
-      ticketsUrl
     }
   }
-}
-fragment AnnounceImages on PublicEvent {
-  announceImages {
-    name
-    highlighted
-    versions {
-      cover {
-        src
+  fragment AnnounceImages on PublicEvent {
+    announceImages {
+      name
+      highlighted
+      versions {
+        cover {
+          src
+        }
       }
     }
-  }
-}")
+  }")
 
 (def df (DateTimeFormatter/ofPattern "EEEE, MMMM d, y"))
 
@@ -205,7 +205,7 @@ fragment AnnounceImages on PublicEvent {
     (download-images dir)))
 
 ;; commit the changes to build site
-(proc/shell "sh" "-c"
+#_(proc/shell "sh" "-c"
   "git pull
    git add data static
    git commit -m 'automatic event sync'
