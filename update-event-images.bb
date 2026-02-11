@@ -149,6 +149,9 @@ fragment AnnounceImages on PublicEvent {
        :out :string}
       (concat ["curl" "-s" "--remote-name-all"] urls))))
 
+;; commit the changes to build site
+(proc/shell "sh" "-c" "git pull")
+
 (let [
       start-date "2025-10-01" #_(str (LocalDate/now))
       dir "static/billboard"
