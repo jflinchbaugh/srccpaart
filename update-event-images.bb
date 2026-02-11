@@ -207,6 +207,6 @@ fragment AnnounceImages on PublicEvent {
 ;; commit the changes to build site
 (proc/shell "sh" "-c"
   "git pull
-   git add .
+   git add data static
    git commit -m 'automatic event sync'
    git push")
