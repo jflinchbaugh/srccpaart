@@ -192,12 +192,13 @@
     events
     (map get-image-url)
     (filter (partial re-matches #".*/cover_.*.jpg"))
-    ( download-images event-dir))
+    (download-images event-dir))
 
   ;; write yaml files for past events
   (->>
     events
     (map parse-event)
+    (remove (fn [{:keys [title]}] (re-find #"(?i)open.mic" title)))
     (map write-event)
     (doall))
 
