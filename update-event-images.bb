@@ -213,7 +213,7 @@
     (download-images billboard-dir)))
 
 ;; commit the changes to build site
-#_(proc/shell "sh" "-c"
+(proc/shell "sh" "-c"
   "git pull
    git add data static
    git commit -m 'automatic event sync'
