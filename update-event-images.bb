@@ -191,7 +191,7 @@
   (->>
     events
     (map get-image-url)
-    (filter (partial re-matches #".*/cover_.*.jpg"))
+    (filter (partial re-matches #".*/cover_.*.(jpg|png)"))
     (download-images event-dir))
 
   ;; write yaml files for past events
@@ -210,7 +210,7 @@
     events
     (filter (fn [e] (<= 0 (compare (:date e) (str (LocalDate/now))))))
     (map get-image-url)
-    (filter (partial re-matches #".*/cover_.*.jpg"))
+    (filter (partial re-matches #".*/cover_.*.(jpg|png)"))
     (download-images billboard-dir)))
 
 ;; commit the changes to build site
