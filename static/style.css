@@ -30,11 +30,11 @@ a.button {
   padding-right: 1em;
   border-radius: 1em;
   line-height: 2em;
+  font-size: 1.25em;
 }
 
 a.button.donate {
   background-color: #2d6f65;
-  font-size: 1.75em;
 }
 
 header {
@@ -137,10 +137,29 @@ div.event div.description {
 
 img.event {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
   padding: 0;
   border-radius: 1em;
+}
+
+.open-tuesday {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(var(--vp-event-grid-col-container-optimal-width),1fr));
+  gap: 0px 30px;
+  justify-items: center;
+}
+
+.open-tuesday div.event {
+  display: flex;
+  max-width: var(--vp-event-grid-card-max-width);
+  padding: 0;
+  border: 2px solid white;
+  border-radius: 0;
+}
+
+.open-tuesday img.event {
+  padding: 0;
+  border-radius: 0;
 }
 
 .past-events {
