@@ -1,8 +1,8 @@
 <section class = "events">
   {{- $events := (merge
-                   $.Site.Data.events.art
-                   $.Site.Data.events.music
-                   $.Site.Data.events.venuepilot)
+                   hugo.Data.events.art
+                   hugo.Data.events.music
+                   hugo.Data.events.venuepilot)
                  | sort | collections.Reverse -}}
   {{- range $index, $element := $events}}
     {{ partial "event.html" $element }}
