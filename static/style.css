@@ -142,14 +142,14 @@ img.event {
   border-radius: 1em;
 }
 
-.open-tuesday {
+.open-tuesday, .monthly {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(var(--vp-event-grid-col-container-optimal-width),1fr));
   gap: 0px 30px;
   justify-items: center;
 }
 
-.open-tuesday div.event {
+.open-tuesday div.event, .monthly div.event {
   display: flex;
   max-width: var(--vp-event-grid-card-max-width);
   padding: 0;
@@ -157,7 +157,7 @@ img.event {
   border-radius: 0;
 }
 
-.open-tuesday img.event {
+.open-tuesday img.event, .monthly img.event {
   padding: 0;
   border-radius: 0;
 }
