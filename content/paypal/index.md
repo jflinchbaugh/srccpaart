@@ -60,6 +60,5 @@ and you'll not see the next automatic charge.
 ## Other Payments
 
 We can also accept:
-* [CashApp: $SRCCpaart](https://cash.app/$SRCCpaart)
 * Cash
 * Checks made out to _Susquehanna River Creative Conspiracy_
