@@ -36,8 +36,8 @@ a.button {
 a.button.donate {
   background-color: #2d6f65;
   font-size: 2em;
-  padding-left: 4em;
-  padding-right: 4em;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
 header {
