@@ -2,9 +2,11 @@
   {{ partial "links.html" . }}
   {{ partial "header-lite.html" . }}
   <div class = "nav">
-    <a href = "https://www.zeffy.com/en-US/donation-form/donate-to-support-srcc"
-       target = "_blank"
-       class = "button donate">Donate!</a>
+    <div>
+      <a href = "https://www.zeffy.com/en-US/donation-form/donate-to-support-srcc"
+         target = "_blank"
+         class = "button donate">Donate!</a>
+    </div>
     <a href = "{{ absURL "#membership" -}}"
        class = "button memberships">Memberships</a>
     <a href = "{{ absURL "#booking" -}}"
