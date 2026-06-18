@@ -35,9 +35,11 @@ a.button {
 
 a.button.donate {
   background-color: #2d6f65;
-  font-size: 2em;
-  padding-left: 3em;
-  padding-right: 3em;
+  font-size: 1em;
+  display: block;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 header {
