@@ -2,32 +2,27 @@
 
 https://srccpaart.org/
 
-Build with Hugo.
+Build the site with [Hugo](https://gohugo.io/).
 
 ## Events
 
-Events are created 
-by adding a YAML file 
+Events are created
+by adding a YAML file
 to `data/events/`
 and uploading the image to `static/events/`.
 
 Billboard/marquee images are created
-by adding a YAML file 
+by adding a YAML file
 to `data/billboard/`
 and upload the image to `static/billboard/`.
 
-Copy an existing file and customize.
+There's a babashka script that runs periodically
+to sync events from Venue Pilot to this site:
+`./update-event-images.bb`
 
-There's also a script
-for copying events from Facebook:
-`./new-event.sh`
-Run it by itself,
-and it'll show its usage.
-
-
-The page is rebuilt every 5 minutes 
+The page is rebuilt every 5 minutes
 on the server
-to show changes 
-and additionally once nightly 
+to show changes
+and additionally once nightly
 to remove expired events
 from the main page.
