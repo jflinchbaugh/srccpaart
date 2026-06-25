@@ -5,6 +5,9 @@ https://srccpaart.org/
 ## Prerequisites
 
 * Install and build the site with [Hugo](https://gohugo.io/).
+  ```
+  hugo server
+  ```
 * Scripts run in `bash` and [Babashka](https://babashka.org/).
 
 ## Events
