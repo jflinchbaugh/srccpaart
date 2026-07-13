@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.164.0'
+          extended: true
+
+      - name: Build site
+        run: |
+          hugo --minify 2>&1 | tee build.log
+          if grep -q "missing image" build.log; then
+            echo "::error::Build referenced one or more missing images - see log above"
+            exit 1
+          fi
