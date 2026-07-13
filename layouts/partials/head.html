@@ -29,7 +29,8 @@
       href = "{{ $style.RelPermalink }}"
       integrity = "{{ $style.Data.Integrity }}">
 <link rel="icon" href="{{ absURL "srcc.png" -}}">
-<link rel="apple-touch-icon" href="{{ absURL "srcc.png" -}}">
+{{- $touchIcon := resources.Get "static/srcc.png" }}
+<link rel="apple-touch-icon" href="{{ absURL "srcc.png" -}}"{{ with $touchIcon }} sizes="{{ .Width }}x{{ .Height }}"{{ end }}>
 <link rel="manifest" href="{{ absURL "manifest.json" -}}">
 <link rel="preload" href="{{ absURL "fonts/open-sans-variable.woff2" -}}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ absURL "fonts/oswald-variable.woff2" -}}" as="font" type="font/woff2" crossorigin>
