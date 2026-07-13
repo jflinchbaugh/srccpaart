@@ -15,6 +15,6 @@
     {{- end }}
   {{- end }}
 </section>
-<nav class = "pagination" id = "pagination" aria-label = "Events pagination"></nav>
+<nav class = "pagination" id = "pagination" aria-label = "Events pagination" aria-live = "polite"></nav>
 {{- $pagerJS := resources.Get "js/events-pagination.js" | fingerprint }}
 <script src = "{{ $pagerJS.RelPermalink }}" integrity = "{{ $pagerJS.Data.Integrity }}"></script>
