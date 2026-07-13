@@ -1,0 +1,38 @@
+{{- $now := now -}}
+{{- $events := (merge hugo.Data.events.art hugo.Data.events.music hugo.Data.events.venuepilot) | sort -}}
+{{- $upcoming := slice -}}
+{{- range $events -}}
+  {{- if (time.AsTime .date).After $now -}}
+    {{- $entry := dict
+          "@context" "https://schema.org"
+          "@type" "Event"
+          "name" .title
+          "startDate" ((time.AsTime .date).Format "2006-01-02")
+          "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+          "eventStatus" "https://schema.org/EventScheduled"
+          "location" (dict
+            "@type" "Place"
+            "name" "Susquehanna River Creative Conspiracy"
+            "address" (dict
+              "@type" "PostalAddress"
+              "streetAddress" "156B Lancaster Ave"
+              "addressLocality" "Columbia"
+              "addressRegion" "PA"
+              "postalCode" "17512"
+              "addressCountry" "US"))
+    -}}
+    {{- with .image -}}
+      {{- $entry = merge $entry (dict "image" (slice (absURL .))) -}}
+    {{- end -}}
+    {{- with (or .description .when) -}}
+      {{- $entry = merge $entry (dict "description" (. | plainify | htmlUnescape)) -}}
+    {{- end -}}
+    {{- with .link -}}
+      {{- $entry = merge $entry (dict "url" .) -}}
+    {{- end -}}
+    {{- $upcoming = $upcoming | append $entry -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $upcoming) 0 }}
+<script type="application/ld+json">{{ $upcoming | jsonify | safeJS }}</script>
+{{- end -}}
