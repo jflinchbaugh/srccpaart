@@ -244,6 +244,29 @@ img.event {
   opacity: 0.7;
 }
 
+.events-skeleton {
+  display: flex;
+  gap: 0px 30px;
+  justify-items: center;
+}
+
+.skeleton-card {
+  flex: 1;
+  aspect-ratio: 2 / 3;
+  border-radius: 1em;
+  background-color: #2a2a2a;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .pagination {
   display: flex;
   align-items: center;
