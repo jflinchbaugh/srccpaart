@@ -2,5 +2,7 @@
 !.github
 !.github/**
 !.tool-versions
+!static/.well-known
+!static/.well-known/**
 public
 resources
