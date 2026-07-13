@@ -4,6 +4,10 @@
                  hugo.Data.events.venuepilot)
                | sort | collections.Reverse -}}
 {{- $now := now -}}
+<div class = "events-search">
+  <label for = "events-search" class = "sr-only">Search events</label>
+  <input type = "search" id = "events-search" placeholder = "Search events by name, date, or venue&hellip;">
+</div>
 <section class = "events" id = "events-list" data-page-size = "24">
   {{- range $events }}
     {{- if (time.AsTime .date).Before $now }}

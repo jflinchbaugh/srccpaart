@@ -219,6 +219,31 @@ img.event {
   padding-top: 1ex;
 }
 
+.events-search {
+  width: 90%;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1em;
+}
+
+.events-search input {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #080808;
+  color: white;
+  border: dotted #9DDFD5;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.events-search input::placeholder {
+  color: #9DDFD5;
+  opacity: 0.7;
+}
+
 .pagination {
   display: flex;
   align-items: center;
