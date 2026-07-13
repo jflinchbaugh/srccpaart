@@ -3,12 +3,12 @@
   <p>(plus fees)</p>
   <p>
     <a href = "{{- $.Page.Params.one_time -}}"
-       target = "_blank" class = "button">
+       target = "_blank" rel = "noopener noreferrer" class = "button">
       Pay {{ $.Page.Params.amount }} Once</a>
   </p>
   <p>
     <a href = "{{- $.Page.Params.subscription -}}"
-       target = "_blank" class = "button">
+       target = "_blank" rel = "noopener noreferrer" class = "button">
       Subscribe for {{ $.Page.Params.amount }} Each Month</a>
   </p>
   <p>
@@ -20,7 +20,7 @@
   </p>
   <p>
     Automatic payments? Magic, right? Read more about our
-    <a href = "/paypal/" target = "_blank">
+    <a href = "/paypal/" target = "_blank" rel = "noopener noreferrer">
       PayPal Subscriptions and other payment options</a>.
     Otherwise, bookmark this page,
     and come back at the end of every month to pay for the <em>next</em> month.
