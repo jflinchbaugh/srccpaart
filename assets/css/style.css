@@ -276,6 +276,10 @@ footer {
   padding-top: 0.5em;
 }
 
+div#list div {
+  padding: 1ex;
+}
+
 @media screen and (max-width: 1024px) {
   h1 {
     font-size: 10vw;
