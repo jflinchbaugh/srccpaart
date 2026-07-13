@@ -1,5 +1,6 @@
 <meta charset = "UTF-8">
-{{- $pageTitle := printf "%s: %s" (or $.Page.Params.title "SRCC") $.Site.Title -}}
+{{- $defaultTitle := cond (eq $.Kind "404") "Page Not Found" "SRCC" -}}
+{{- $pageTitle := printf "%s: %s" (or $.Page.Params.title $defaultTitle) $.Site.Title -}}
 {{- $description := or $.Page.Params.description $.Site.Params.description -}}
 <title>{{ $pageTitle }}</title>
 <meta name="viewport" content="width=device-width, user-scalable=1">
