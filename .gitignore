@@ -1,5 +1,6 @@
 .*
 !.github
 !.github/**
+!.tool-versions
 public
 resources
