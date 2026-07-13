@@ -4,9 +4,11 @@
     {{ partial "head.html" . }}
   </head>
   <body>
+    <a href = "#main" class = "skip-link">Skip to content</a>
     {{ partial "header.html" . }}
-    <main>
+    <main id = "main">
       <section class = "{{- .Params.page_class -}}">
+        <h1>{{ .Title }}</h1>
         {{ .Content }}
       </section>
     </main>

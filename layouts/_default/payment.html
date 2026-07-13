@@ -4,10 +4,11 @@
     {{ partial "head.html" . }}
   </head>
   <body>
+    <a href = "#main" class = "skip-link">Skip to content</a>
     <header>
       {{ partial "header-lite.html" . }}
     </header>
-    <main>
+    <main id = "main">
       {{ partial "payment.html" . }}
     </main>
     {{ partial "footer.html" . }}
