@@ -1,7 +1,7 @@
+<meta charset = "UTF-8">
 {{- $pageTitle := printf "%s: %s" (or $.Page.Params.title "SRCC") $.Site.Title -}}
 {{- $description := or $.Page.Params.description $.Site.Params.description -}}
 <title>{{ $pageTitle }}</title>
-<meta charset = "UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=1">
 <meta name="description" content="{{ $description }}">
 <meta name="theme-color" content="#2d6f65">
@@ -23,3 +23,6 @@
 <link rel="manifest" href="{{ absURL "manifest.json" -}}">
 <link rel="preload" href="{{ absURL "fonts/open-sans-variable.woff2" -}}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ absURL "fonts/oswald-variable.woff2" -}}" as="font" type="font/woff2" crossorigin>
+{{- with .OutputFormats.Get "rss" }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+{{- end }}
