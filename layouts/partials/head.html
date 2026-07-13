@@ -4,6 +4,7 @@
 <meta charset = "UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=1">
 <meta name="description" content="{{ $description }}">
+<meta name="theme-color" content="#2d6f65">
 <meta property="og:image" content="{{ absURL "srcc-logo-solid.png" }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ $pageTitle }}">
@@ -13,5 +14,7 @@
       href = "{{ $style.RelPermalink }}"
       integrity = "{{ $style.Data.Integrity }}">
 <link rel="icon" href="{{ absURL "srcc.png" -}}">
+<link rel="apple-touch-icon" href="{{ absURL "srcc.png" -}}">
+<link rel="manifest" href="{{ absURL "manifest.json" -}}">
 <link rel="preload" href="{{ absURL "fonts/open-sans-variable.woff2" -}}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ absURL "fonts/oswald-variable.woff2" -}}" as="font" type="font/woff2" crossorigin>

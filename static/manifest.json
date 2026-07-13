@@ -1,0 +1,16 @@
+{
+  "name": "Susquehanna River Creative Conspiracy",
+  "short_name": "SRCC",
+  "description": "Creative Space in Columbia, Lancaster, PA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1F1F1F",
+  "theme_color": "#2d6f65",
+  "icons": [
+    {
+      "src": "/srcc.png",
+      "sizes": "592x592",
+      "type": "image/png"
+    }
+  ]
+}
