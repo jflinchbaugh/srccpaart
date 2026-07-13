@@ -12,6 +12,9 @@ Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
 <IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
   <FilesMatch "\.[a-f0-9]{64}\.css$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
