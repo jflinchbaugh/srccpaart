@@ -22,8 +22,11 @@ jobs:
 
       - name: Validate event/billboard data
         run: |
-          pip install pyyaml
+          pip install -r scripts/requirements.txt
           python3 scripts/validate-data.py
+
+      - name: Test the static-shadowing checker itself
+        run: python3 scripts/test_check_static_shadowing.py
 
       - name: Check for unapproved static/ directory shadowing
         run: python3 scripts/check-static-shadowing.py
