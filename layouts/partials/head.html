@@ -5,8 +5,10 @@
 <meta property="og:url" content="https://www.srccpaart.org/">
 <meta property="og:title" content="Susquehanna River Creative Conspiracy: SRCC">
 <meta property="og:description" content="Creative Space in Columbia, Lancaster, PA.">
+{{- $style := resources.Get "css/style.css" | fingerprint }}
 <link rel = "stylesheet" type = "text/css"
-      href = "{{ absURL "style.css?v=" -}}{{- now.Unix -}}">
+      href = "{{ $style.RelPermalink }}"
+      integrity = "{{ $style.Data.Integrity }}">
 <link rel="icon" href="{{ absURL "srcc.png" -}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

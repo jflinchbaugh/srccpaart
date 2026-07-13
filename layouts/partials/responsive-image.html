@@ -1,0 +1,27 @@
+{{- $path := .path -}}
+{{- $img := resources.Get (printf "static/%s" $path) -}}
+{{- if $img -}}
+  {{- $targetWidth := 1000 -}}
+  {{- if lt $img.Width $targetWidth -}}
+    {{- $targetWidth = $img.Width -}}
+  {{- end -}}
+  {{- $fallback := $img -}}
+  {{- if lt $targetWidth $img.Width -}}
+    {{- $fallback = $img.Resize (printf "%dx q80" $targetWidth) -}}
+  {{- end -}}
+  {{- $webp := $img.Resize (printf "%dx webp q75" $targetWidth) -}}
+  <picture>
+    <source type = "image/webp" srcset = "{{ $webp.RelPermalink }}">
+    <img {{ with .id }}id = "{{ . }}"{{ end }} class = "{{ .class }}"
+         src = "{{ $fallback.RelPermalink }}"
+         width = "{{ $fallback.Width }}"
+         height = "{{ $fallback.Height }}"
+         alt = "{{ .alt }}"
+         loading = "{{ .loading | default "lazy" }}">
+  </picture>
+{{- else -}}
+  <img {{ with .id }}id = "{{ . }}"{{ end }} class = "{{ .class }}"
+       src = "{{ absURL $path }}"
+       alt = "{{ .alt }}"
+       loading = "{{ .loading | default "lazy" }}">
+{{- end -}}

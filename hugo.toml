@@ -2,3 +2,32 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'Susquehanna River Creative Conspiracy'
 timeZone = 'America/New_York'
+
+# Custom mounts replace ALL default mounts for this module, so every
+# standard directory must be re-declared here. The extra static->assets/static
+# mount lets templates run static/ images (written by the event-sync scripts)
+# through Hugo's image processing pipeline without moving the files.
+[[module.mounts]]
+  source = 'archetypes'
+  target = 'archetypes'
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+[[module.mounts]]
+  source = 'content'
+  target = 'content'
+[[module.mounts]]
+  source = 'data'
+  target = 'data'
+[[module.mounts]]
+  source = 'i18n'
+  target = 'i18n'
+[[module.mounts]]
+  source = 'layouts'
+  target = 'layouts'
+[[module.mounts]]
+  source = 'static'
+  target = 'static'
+[[module.mounts]]
+  source = 'static'
+  target = 'assets/static'

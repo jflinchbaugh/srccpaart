@@ -1,6 +1,5 @@
 <div class = "monthly">
   <div class = "event">
-    <img class = "event" src = "{{ absURL "creative-circles.png" -}}"
-         alt="Creative Circles, Mutual Support Group for Artists, Last Sundays, 5:30pm-6:30pm at SRCC."/>
+    {{ partial "responsive-image.html" (dict "path" "creative-circles.png" "alt" "Creative Circles, Mutual Support Group for Artists, Last Sundays, 5:30pm-6:30pm at SRCC." "class" "event" "loading" "lazy") }}
   </div>
 </div>

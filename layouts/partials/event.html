@@ -1,7 +1,5 @@
 <div class = "event">
-  <img class = "event"
-        src = "{{- absURL .image -}}"
-        alt = "{{- .title -}}">
+  {{ partial "responsive-image.html" (dict "path" .image "alt" .title "class" "event" "loading" "lazy") }}
   <div class = "title">
     {{ .title | markdownify | emojify -}}
   </div>

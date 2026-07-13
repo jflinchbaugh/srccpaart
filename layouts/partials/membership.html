@@ -1,7 +1,5 @@
 <section class = "membership">
-  <img id = "membership"
-       alt = "SRCC Membership"
-       src = "{{ absURL "srcc-membership.jpg" -}}">
+  {{ partial "responsive-image.html" (dict "path" "srcc-membership.jpg" "alt" "SRCC Membership" "id" "membership" "loading" "lazy") }}
   <p>Affordable memberships include:</p>
   <ul>
     <li>
