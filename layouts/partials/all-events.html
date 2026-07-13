@@ -4,7 +4,10 @@
                    hugo.Data.events.music
                    hugo.Data.events.venuepilot)
                  | sort | collections.Reverse -}}
+  {{- $now := now -}}
   {{- range $index, $element := $events}}
+    {{- if (time.AsTime $element.date).Before $now }}
     {{ partial "event.html" $element }}
+    {{- end }}
   {{- end }}
 </section>
