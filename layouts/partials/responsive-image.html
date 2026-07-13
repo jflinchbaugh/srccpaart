@@ -10,8 +10,17 @@
     {{- $fallback = $img.Resize (printf "%dx q80" $targetWidth) -}}
   {{- end -}}
   {{- $webp := $img.Resize (printf "%dx webp q75" $targetWidth) -}}
+  {{- $srcset := printf "%s 1x" $webp.RelPermalink -}}
+  {{- $targetWidth2x := mul $targetWidth 2 -}}
+  {{- if lt $targetWidth2x $img.Width -}}
+    {{- $webp2x := $img.Resize (printf "%dx webp q75" $targetWidth2x) -}}
+    {{- $srcset = printf "%s, %s 2x" $srcset $webp2x.RelPermalink -}}
+  {{- else if lt $targetWidth $img.Width -}}
+    {{- $webp2x := $img.Resize (printf "%dx webp q75" $img.Width) -}}
+    {{- $srcset = printf "%s, %s 2x" $srcset $webp2x.RelPermalink -}}
+  {{- end -}}
   <picture>
-    <source type = "image/webp" srcset = "{{ $webp.RelPermalink }}">
+    <source type = "image/webp" srcset = "{{ $srcset }}">
     <img {{ with .id }}id = "{{ . }}"{{ end }} class = "{{ .class }}"
          src = "{{ $fallback.RelPermalink }}"
          width = "{{ $fallback.Width }}"

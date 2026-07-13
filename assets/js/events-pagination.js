@@ -92,7 +92,11 @@
   }
 
   if (searchInput) {
-    searchInput.addEventListener("input", applyFilter);
+    let debounceTimer;
+    searchInput.addEventListener("input", function () {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(applyFilter, 200);
+    });
   }
 
   render();
