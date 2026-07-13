@@ -24,17 +24,17 @@ and we'll provide you with a link to pay how you want:
 
 ## Subscriptions
 
-Setup a subscription,
+Set up a subscription,
 and you can automatically send your dues on the same day every month.
 When you want to turn it off,
 you can [contact us](mailto:contact@srccpaart.org)
-_or_ login to PayPal
+_or_ log in to PayPal
 and cancel your subscription for yourself.
 
 Here's the management and cancelation process you'll see in the PayPal app:
 
 ![PayPal Home](/paypal/home.png)
-Login to your PayPal account,
+Log in to your PayPal account,
 and click your recurring subscriptions.
 
 ![Subscriptions](/paypal/subscriptions.png)
@@ -43,7 +43,7 @@ Click your _Susquehanna River Creative Conspiracy_ subscription.
 
 ![Subscription Details](/paypal/details.png)
 You'll see your _Scheduled_ payment
-and _Completed_ payments.
+and _Completed_ payments
 for your SRCC subscription.
 Click _Manage_.
 
