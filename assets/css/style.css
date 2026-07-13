@@ -189,6 +189,7 @@ div.event div.description {
 
 img.event {
   width: 100%;
+  height: auto;
   margin: auto;
   padding: 0;
   border-radius: 1em;
