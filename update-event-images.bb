@@ -169,7 +169,6 @@
       headers {"User-Agent" "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
                "Accept" "*/*"
                "Accept-Language" "en-US,en;q=0.5"
-               "Accept-Encoding" "gzip, deflate, br, zstd"
                "Referer" "https://script.org/"
                "Content-type" "application/json"
                "Origin" "https://srccpaart.org"
@@ -184,6 +183,7 @@
                   {:body query
                    :headers headers})
       body (:body response)
+      _ (prn body)
       data (json/parse-string body true)
       events (get-in data [:data :paginatedEvents :collection])]
 
