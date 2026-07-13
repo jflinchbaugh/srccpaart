@@ -25,6 +25,9 @@ jobs:
           pip install pyyaml
           python3 scripts/validate-data.py
 
+      - name: Check for unapproved static/ directory shadowing
+        run: python3 scripts/check-static-shadowing.py
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3.2.1
         with:
