@@ -13,6 +13,7 @@
         <button id = "refresh-button">Refresh</button>
       </div>
     </main>
-    <script src = "{{ absURL "js/screens.js" -}}"></script>
+    {{- $screensJS := resources.Get "js/screens.js" | fingerprint }}
+    <script src = "{{ $screensJS.RelPermalink }}" integrity = "{{ $screensJS.Data.Integrity }}"></script>
   </body>
 </html>
