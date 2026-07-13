@@ -1,8 +1,15 @@
-.*
-!.github
-!.github/**
-!.tool-versions
-!static/.well-known
-!static/.well-known/**
+# Claude Code's local session config - machine-specific, never commit
+.claude/
+
+# Hugo build artifacts and transient state
+.hugo_build.lock
 public
 resources
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
