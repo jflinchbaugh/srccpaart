@@ -17,7 +17,7 @@ Header set Access-Control-Allow-Origin "*"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Cross-Origin-Opener-Policy "same-origin"
-  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.venuepilot.co https://widget.staging.venuepilot.com; style-src 'self' 'unsafe-inline' https://widget.staging.venuepilot.com; img-src 'self' https://s3.amazonaws.com data:; font-src 'self'; connect-src 'self' https://www.venuepilot.co; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.venuepilot.co https://widget.staging.venuepilot.com; style-src 'self' 'unsafe-inline' https://widget.staging.venuepilot.com; img-src 'self' https://s3.amazonaws.com data:; font-src 'self' data:; connect-src 'self' https://www.venuepilot.co; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
 
   <FilesMatch "\.[a-f0-9]{64}\.(css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
