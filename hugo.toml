@@ -3,6 +3,7 @@ locale = 'en-us'
 title = 'Susquehanna River Creative Conspiracy'
 timeZone = 'America/New_York'
 enableRobotsTXT = true
+enableGitInfo = true
 disableKinds = ['taxonomy', 'term']
 
 [params]

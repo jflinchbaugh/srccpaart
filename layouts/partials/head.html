@@ -15,6 +15,11 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ $pageTitle }}">
 <meta property="og:description" content="{{ $description }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ absURL "srcc-logo-solid.png" }}">
+<link rel="canonical" href="{{ .Permalink }}">
 {{- $style := resources.Get "css/style.css" | fingerprint }}
 <link rel = "stylesheet" type = "text/css"
       href = "{{ $style.RelPermalink }}"

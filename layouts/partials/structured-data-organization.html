@@ -1,0 +1,20 @@
+{{- $org := dict
+      "@context" "https://schema.org"
+      "@type" "LocalBusiness"
+      "name" $.Site.Title
+      "url" $.Site.BaseURL
+      "image" (absURL "srcc-logo-solid.png")
+      "address" (dict
+        "@type" "PostalAddress"
+        "streetAddress" "156B Lancaster Ave"
+        "addressLocality" "Columbia"
+        "addressRegion" "PA"
+        "postalCode" "17512"
+        "addressCountry" "US")
+      "sameAs" (slice
+        "https://www.youtube.com/channel/UCSpI6I_YOS8pEP_gex-ulKg"
+        "https://www.instagram.com/srccpaart/"
+        "https://www.facebook.com/srccpaart"
+        "https://linktr.ee/srccpaart")
+-}}
+<script type="application/ld+json">{{ $org | jsonify | safeJS }}</script>
