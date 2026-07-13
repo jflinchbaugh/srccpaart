@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Susquehanna River Creative Conspiracy'
 timeZone = 'America/New_York'
 enableRobotsTXT = true
+disableKinds = ['taxonomy', 'term']
 
 [params]
   description = 'Creative Space in Columbia, Lancaster, PA.'
