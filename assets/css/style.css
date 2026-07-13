@@ -205,7 +205,7 @@ img.event {
 
 .open-tuesday, .monthly {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(var(--vp-event-grid-col-container-optimal-width),1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--vp-event-grid-col-container-optimal-width), 1fr));
   gap: 0px 30px;
   justify-items: center;
 }
