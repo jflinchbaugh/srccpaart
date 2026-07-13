@@ -1,0 +1,13 @@
+<IfModule mod_headers.c>
+  # This page exists solely to host the VenuePilot ticketing widget,
+  # isolated in an iframe from the main site (see ARCHITECTURE.md's
+  # "The VenuePilot widget" section). Its policy is looser than the rest
+  # of the site's - it needs 'unsafe-eval' (the widget calls eval()
+  # internally) plus the widget's own script/style/image/font sources -
+  # but that's now contained to just this one sandboxed page instead of
+  # applying site-wide. frame-ancestors 'self' keeps this page from being
+  # embedded anywhere except this site's own homepage, since it would
+  # otherwise be a much easier target to embed maliciously elsewhere given
+  # how permissive the rest of this policy is.
+  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-eval' https://www.venuepilot.co https://widget.staging.venuepilot.com; style-src 'self' 'unsafe-inline' https://widget.staging.venuepilot.com; img-src 'self' https://s3.amazonaws.com data:; font-src 'self' data:; connect-src 'self' https://www.venuepilot.co; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+</IfModule>

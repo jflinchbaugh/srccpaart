@@ -13,7 +13,13 @@ import sys
 # the raw directory listing there. Add to this list only after
 # confirming with whoever manages the server that nothing depends on
 # the raw directory listing at that path.
-ALLOWED_SHADOWS = {"events", "paypal"}
+#
+# "venuepilot-embed" is different from the other two: static/venuepilot-embed/
+# holds no content, only a page-scoped .htaccess (see ARCHITECTURE.md's
+# "The VenuePilot widget" section) - there's no directory listing to shadow
+# in the first place, since this page and its .htaccess were added together
+# in the same change and nothing external has ever depended on it.
+ALLOWED_SHADOWS = {"events", "paypal", "venuepilot-embed"}
 
 
 def subdirs(base):

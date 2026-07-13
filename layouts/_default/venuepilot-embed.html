@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "robots" content = "noindex, nofollow">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #1F1F1F;
+      }
+      .events-skeleton {
+        display: flex;
+        gap: 0px 30px;
+        justify-items: center;
+        padding: 1ex;
+        box-sizing: border-box;
+      }
+      .skeleton-card {
+        flex: 1;
+        aspect-ratio: 2 / 3;
+        border-radius: 1em;
+        background-color: #2a2a2a;
+        animation: skeleton-pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes skeleton-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .skeleton-card {
+          animation: none;
+          opacity: 0.75;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="venuepilot-app"></div>
+    <div id="events-skeleton" class="events-skeleton" aria-hidden="true">
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+    <div id="eventGridElementId1"></div>
+    <script src="https://www.venuepilot.co/widgets/AZ4UWEcdWu1_g99BCX21.js" defer></script>
+    {{- $embedJS := resources.Get "js/venuepilot-embed.js" | fingerprint }}
+    <script src = "{{ $embedJS.RelPermalink }}" integrity = "{{ $embedJS.Data.Integrity }}"></script>
+  </body>
+</html>

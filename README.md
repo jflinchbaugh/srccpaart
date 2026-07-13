@@ -63,3 +63,10 @@ Known or suspected external dependents:
 
 If you're unsure whether a `static/` directory has an external
 consumer, ask before adding a content page at that path.
+
+(`static/venuepilot-embed/` is a different case, also allow-listed
+in `scripts/check-static-shadowing.py` but not an external-dependency
+risk: it holds only a page-scoped `.htaccess`, added in the same
+change as `content/venuepilot-embed/`, and no directory listing ever
+existed there to depend on. See `ARCHITECTURE.md`'s "The VenuePilot
+widget" section.)
