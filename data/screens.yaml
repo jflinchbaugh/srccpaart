@@ -1,0 +1,7 @@
+subnet: '192.168.0'
+port: 8080
+backups:
+  - label: 'Event Room'
+    host: 19
+  - label: 'Lounge'
+    host: 29

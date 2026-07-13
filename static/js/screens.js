@@ -2,7 +2,9 @@ document.getElementById("refresh-button").addEventListener("click", function () 
   location.reload(true);
 });
 
-const baseUrl = "http://192.168.0"
+const list = document.getElementById("list");
+const config = JSON.parse(list.dataset.screensConfig);
+const baseUrl = `http://${config.subnet}`;
 let foundCount = 0;
 function reqListener(ev) {
    const url = ev.srcElement.responseURL;
@@ -13,7 +15,6 @@ function reqListener(ev) {
                         href="${screenUrl}">
      ${identifier} (${screenUrl})</a>`
 
-   const list = document.getElementById("list");
    list.appendChild(item);
    foundCount ++;
 }
@@ -21,23 +22,20 @@ function reqListener(ev) {
 for (let i = 1; i < 256; i++) {
    const req = new XMLHttpRequest();
    req.addEventListener("load", reqListener);
-   req.open("GET", `${baseUrl}.${i}:8080/app-identity`);
+   req.open("GET", `${baseUrl}.${i}:${config.port}/app-identity`);
    req.send();
 }
 setTimeout(function() {
    document.getElementById("searching").remove();
 
    if (foundCount <= 0) {
-      const list = document.getElementById("list");
-      const item1 = document.createElement("div");
-      item1.innerHTML = `<a target="_blank" rel="noopener noreferrer"
-                            href="http://192.168.0.19:8080/">
-                            backup - Event Room</a>`
-      list.appendChild(item1);
-      const item2 = document.createElement("div");
-      item2.innerHTML = `<a target="_blank" rel="noopener noreferrer"
-                            href="http://192.168.0.29:8080/">
-                            backup - Lounge</a>`
-      list.appendChild(item2);
+      for (const backup of config.backups) {
+         const url = `${baseUrl}.${backup.host}:${config.port}/`;
+         const item = document.createElement("div");
+         item.innerHTML = `<a target="_blank" rel="noopener noreferrer"
+                              href="${url}">
+                              backup - ${backup.label}</a>`
+         list.appendChild(item);
+      }
    }
 }, 15000);
