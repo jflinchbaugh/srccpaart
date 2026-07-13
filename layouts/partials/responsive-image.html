@@ -20,6 +20,7 @@
          loading = "{{ .loading | default "lazy" }}">
   </picture>
 {{- else -}}
+  {{- warnf "missing image: static/%s (referenced with alt %q)" $path .alt -}}
   <img {{ with .id }}id = "{{ . }}"{{ end }} class = "{{ .class }}"
        src = "{{ absURL $path }}"
        alt = "{{ .alt }}"
