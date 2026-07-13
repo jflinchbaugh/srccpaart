@@ -1,7 +1,11 @@
-baseURL = '/'
+baseURL = 'https://www.srccpaart.org/'
 languageCode = 'en-us'
 title = 'Susquehanna River Creative Conspiracy'
 timeZone = 'America/New_York'
+enableRobotsTXT = true
+
+[params]
+  description = 'Creative Space in Columbia, Lancaster, PA.'
 
 # Custom mounts replace ALL default mounts for this module, so every
 # standard directory must be re-declared here. The extra static->assets/static

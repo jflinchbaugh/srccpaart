@@ -1,10 +1,13 @@
-<title>{{ or $.Page.Params.title "SRCC" }}: {{ $.Site.Title -}}</title>
+{{- $pageTitle := printf "%s: %s" (or $.Page.Params.title "SRCC") $.Site.Title -}}
+{{- $description := or $.Page.Params.description $.Site.Params.description -}}
+<title>{{ $pageTitle }}</title>
 <meta charset = "UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=1">
-<meta property="og:image" content="https://www.srccpaart.org/srcc-logo-solid.png">
-<meta property="og:url" content="https://www.srccpaart.org/">
-<meta property="og:title" content="Susquehanna River Creative Conspiracy: SRCC">
-<meta property="og:description" content="Creative Space in Columbia, Lancaster, PA.">
+<meta name="description" content="{{ $description }}">
+<meta property="og:image" content="{{ absURL "srcc-logo-solid.png" }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $description }}">
 {{- $style := resources.Get "css/style.css" | fingerprint }}
 <link rel = "stylesheet" type = "text/css"
       href = "{{ $style.RelPermalink }}"

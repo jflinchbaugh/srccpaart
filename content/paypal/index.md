@@ -1,5 +1,6 @@
 ---
 title: 'PayPal'
+description: 'How to pay your SRCC membership dues with PayPal, and how to manage or cancel a subscription.'
 page_class: 'paypal'
 ---
 
@@ -11,7 +12,7 @@ to SRCC as easy as possible.
 We're using PayPal
 to accept **Credit Cards**, **Debit Cards**,
 or **Venmo**.
-[Contact us](mailto:contact@srcccpaart.org),
+[Contact us](mailto:contact@srccpaart.org),
 and we'll provide you with a link to pay how you want:
 * **Manually:**
   Click the payment link every month
