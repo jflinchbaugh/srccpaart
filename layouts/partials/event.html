@@ -1,8 +1,8 @@
 <div class = "event">
   {{ partial "responsive-image.html" (dict "path" .image "alt" .title "class" "event" "loading" "lazy") }}
-  <div class = "title">
+  <h3 class = "title">
     {{ .title | markdownify | emojify -}}
-  </div>
+  </h3>
   <div class = "when">
     {{ .when | markdownify | emojify }}
   </div>

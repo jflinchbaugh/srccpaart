@@ -138,6 +138,12 @@ div.event div.description {
   font-size: 75%;
 }
 
+.title {
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+
 img.event {
   width: 100%;
   margin: auto;
