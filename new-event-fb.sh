@@ -30,7 +30,7 @@ EOF
 cat > "data/events/${type}/${file_name}.yaml" <<EOF
 title: "${title}"
 when: "${when}"
-image: "/events/${file_name}.jpg"
+image: "events/${file_name}.jpg"
 date: ${date}
 link: "${event_url}"
 actionText: RSVP and share on Facebook
