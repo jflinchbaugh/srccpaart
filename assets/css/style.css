@@ -219,6 +219,18 @@ img.event {
   padding-top: 1ex;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1ex 0;
+}
+
+.pagination-status {
+  font-size: 0.9em;
+}
+
 .links {
   border-radius: 1em;
   background-color: #080808;

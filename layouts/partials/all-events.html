@@ -1,13 +1,16 @@
-<section class = "events">
-  {{- $events := (merge
-                   hugo.Data.events.art
-                   hugo.Data.events.music
-                   hugo.Data.events.venuepilot)
-                 | sort | collections.Reverse -}}
-  {{- $now := now -}}
-  {{- range $index, $element := $events}}
-    {{- if (time.AsTime $element.date).Before $now }}
-    {{ partial "event.html" $element }}
+{{- $events := (merge
+                 hugo.Data.events.art
+                 hugo.Data.events.music
+                 hugo.Data.events.venuepilot)
+               | sort | collections.Reverse -}}
+{{- $now := now -}}
+<section class = "events" id = "events-list" data-page-size = "24">
+  {{- range $events }}
+    {{- if (time.AsTime .date).Before $now }}
+    {{ partial "event.html" . }}
     {{- end }}
   {{- end }}
 </section>
+<nav class = "pagination" id = "pagination" aria-label = "Events pagination"></nav>
+{{- $pagerJS := resources.Get "js/events-pagination.js" | fingerprint }}
+<script src = "{{ $pagerJS.RelPermalink }}" integrity = "{{ $pagerJS.Data.Integrity }}"></script>
