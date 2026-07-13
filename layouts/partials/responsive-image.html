@@ -9,6 +9,9 @@
   {{- if lt $targetWidth $img.Width -}}
     {{- $fallback = $img.Resize (printf "%dx q80" $targetWidth) -}}
   {{- end -}}
+  {{- if gt $fallback.Width $img.Width -}}
+    {{- errorf "responsive-image.html: upscaled %s from %dpx to %dpx - the never-upscale cap is broken" $path $img.Width $fallback.Width -}}
+  {{- end -}}
   {{- $webp := $img.Resize (printf "%dx webp q75" $targetWidth) -}}
   {{- $srcset := printf "%s 1x" $webp.RelPermalink -}}
   {{- $targetWidth2x := mul $targetWidth 2 -}}
