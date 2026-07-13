@@ -10,6 +10,10 @@ Header set Access-Control-Allow-Origin "*"
   ExpiresByType image/png "access plus 1 week"
   ExpiresByType image/webp "access plus 1 week"
   ExpiresByType image/svg+xml "access plus 1 week"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 week"
+  ExpiresByType image/x-icon "access plus 1 week"
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType application/json "access plus 1 week"
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -17,6 +21,13 @@ Header set Access-Control-Allow-Origin "*"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Cross-Origin-Opener-Policy "same-origin"
+  # Known report-only violation, left unresolved on purpose: the VenuePilot
+  # widget calls eval() internally (confirmed via live console output), which
+  # needs 'unsafe-eval' in script-src to silence. Not adding it - that
+  # disables one of CSP's main XSS protections site-wide to accommodate
+  # third-party code we don't control. Revisit deliberately before ever
+  # promoting this policy to enforcing; don't just add 'unsafe-eval' to make
+  # the violation go away.
   Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://www.venuepilot.co https://widget.staging.venuepilot.com; style-src 'self' 'unsafe-inline' https://widget.staging.venuepilot.com; img-src 'self' https://s3.amazonaws.com data:; font-src 'self' data:; connect-src 'self' https://www.venuepilot.co; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
 
   <FilesMatch "\.[a-f0-9]{64}\.(css|js)$">
