@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /screens/
-Disallow: /venuepilot-embed/
 Sitemap: {{ "sitemap.xml" | absURL }}

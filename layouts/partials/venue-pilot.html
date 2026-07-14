@@ -1,7 +1,9 @@
-<iframe id = "venuepilot-frame"
-        class = "venuepilot-frame"
-        src = "{{ absURL "/venuepilot-embed/" }}"
-        title = "Upcoming events and tickets"
-        loading = "eager"></iframe>
-{{- $resizeJS := resources.Get "js/venuepilot-iframe-resize.js" | fingerprint }}
-<script src = "{{ $resizeJS.RelPermalink }}" integrity = "{{ $resizeJS.Data.Integrity }}"></script>
+<div id="venuepilot-app"></div>
+<div id="events-skeleton" class="events-skeleton" aria-hidden="true">
+  <div class="skeleton-card"></div>
+  <div class="skeleton-card"></div>
+</div>
+<div id="eventGridElementId1"></div>
+<script src="https://www.venuepilot.co/widgets/AZ4UWEcdWu1_g99BCX21.js" defer></script>
+{{- $skeletonJS := resources.Get "js/widget-skeleton.js" | fingerprint }}
+<script src = "{{ $skeletonJS.RelPermalink }}" integrity = "{{ $skeletonJS.Data.Integrity }}"></script>

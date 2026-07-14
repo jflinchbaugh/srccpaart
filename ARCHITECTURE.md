@@ -63,68 +63,28 @@ that fails the build if it happens again to an unapproved path.
 
 ## The VenuePilot widget
 
-The homepage embeds VenuePilot's ticketing widget, but not directly -
-it's sandboxed in an iframe (as of July 2026) to stop the widget's
-third-party code from contaminating the main document:
+The homepage embeds VenuePilot's ticketing widget
+(`layouts/partials/venue-pilot.html`) via a third-party `<script>`
+tag. It's not sandboxed (no iframe) and has several known quirks,
+all deliberately worked around rather than "fixed" since it's code
+we don't control:
 
-- `layouts/partials/venue-pilot.html` is just an `<iframe>` pointing
-  at `/venuepilot-embed/`, plus a small script
-  (`assets/js/venuepilot-iframe-resize.js`) that listens for a
-  `postMessage` from that iframe and resizes it to fit.
-- `/venuepilot-embed/` (`content/venuepilot-embed/index.md` +
-  `layouts/_default/venuepilot-embed.html`) is a standalone page that
-  actually hosts the widget's `<script>` tag. It's a real Hugo page,
-  not `static/` content, so it's excluded from the sitemap and
-  `noindex`ed - it's an implementation detail, not content. It's
-  allow-listed in `scripts/check-static-shadowing.py`'s
-  `ALLOWED_SHADOWS` for an unrelated reason: `static/venuepilot-embed/`
-  holds only that page's scoped `.htaccess` (see below), not a
-  directory listing anything depends on.
-  `assets/js/venuepilot-embed.js` hides the skeleton loader once the
-  widget populates its grid, and reports the embed page's height to
-  the parent via `postMessage` on load and on `ResizeObserver`
-  changes, since the widget's real height isn't known in advance.
-- The iframe is same-origin (`/venuepilot-embed/` is served from this
-  site's own domain, not a separate one) - it stops CSS bleed and
-  lets the widget's `eval()` calls and CSP needs be scoped to just
-  that one page instead of the whole site (see below), but it is
-  **not** a full security boundary. A same-origin iframe can still
-  read this site's cookies/localStorage and, without a `sandbox`
-  attribute (none is set), isn't restricted from navigating the
-  parent. If VenuePilot's widget is ever compromised, this still
-  contains CSS/CSP blast radius but not a determined same-origin XSS.
-  True isolation would need the embed page on a different origin -
-  not done, since it'd need real infrastructure (a subdomain, CORS
-  for the resize `postMessage`) for a third-party widget that hasn't
-  shown signs of actually being compromised.
-- The widget injects a global CSS reset (Tailwind-preflight-style)
-  including an unscoped `body { font-family: ...; line-height: ...;
-  margin: 0 }`. This used to require `!important` overrides on the
-  main page's `body` rule and `overflow-x: hidden` to contain a
-  ~10px horizontal overflow the widget's content caused - both
-  removed once the widget moved to its own document, since neither
-  can reach the main page anymore. (The `overflow-x: hidden` removal
-  also exposed a real, unrelated, pre-existing bug: `body` had
-  `width: 100%` plus non-zero `padding-left`/`padding-right` without
-  `box-sizing: border-box`, which overflows by design in the standard
-  CSS box model - that was the actual root cause of the ~10px, not
-  the widget. Fixed by adding `box-sizing: border-box` to `body`.)
+- It injects a global CSS reset (Tailwind-preflight-style) including
+  an unscoped `body { font-family: ...; line-height: ...; margin: 0
+  }`. `assets/css/style.css`'s `body` rule uses `!important` on the
+  properties this collides with. There's a residual ~10px horizontal
+  overflow from the widget's own content that's contained with
+  `overflow-x: hidden` on `body` rather than root-caused.
 - It calls `eval()` internally (confirmed via the live site's
   console with the CSP in report-only mode) and loads an icon font
-  via a `data:` URI. Because the widget now lives only on
-  `/venuepilot-embed/`, `'unsafe-eval'` and the widget's third-party
-  script/style/image/font sources are scoped to that one page's own
-  policy (`static/venuepilot-embed/.htaccess`) instead of applying
-  site-wide - see the comment there for why. The main site's CSP
-  (`.htaccess` / `static/.htaccess`) no longer needs any
-  VenuePilot-specific allowances at all. Don't add `'unsafe-eval'` to
-  the *main* policy without reading the comment in
-  `static/venuepilot-embed/.htaccess` first - the whole point of the
-  iframe was to avoid needing that site-wide.
-- Both CSPs are report-only and have no reporting endpoint configured
-  - checking for new violations currently means manually opening the
-  live site in a browser and reading the DevTools console, on both
-  the homepage and `/venuepilot-embed/` directly.
+  via a `data:` URI. The CSP's `font-src` allows `data:` to
+  accommodate the font. It deliberately does **not** include
+  `'unsafe-eval'` in `script-src` - see the comment directly above
+  the `Content-Security-Policy-Report-Only` header in `.htaccess`
+  for why, and don't add it without reading that first.
+- The CSP is report-only and has no reporting endpoint configured -
+  checking for new violations currently means manually opening the
+  live site in a browser and reading the DevTools console.
 
 ## `screens.html`
 
